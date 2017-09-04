@@ -17,12 +17,12 @@
 	<div class="container text-center">
 		<div class="col-xs-2">
 				<ul class="list-unstyled">
-					<li><a href="../Site annonces-immo/index.php">Index</a></li>
-					<li><a href="../Site annonces-immo/rubriques.php">Rubriques</a></li>
-					<li><a href="../Site annonces-immo/annonces.php">Annonces</a></li>
-					<li><a href="../Site annonces-immo/annonceurs.php">Annonceurs</a></li>
+					<li><a href="../Site/index.php">Index</a></li>
+					<li><a href="../Site/rubriques.php">Rubriques</a></li>
+					<li><a href="../Site/annonces.php">Annonces</a></li>
+					<li><a href="../Siteo/annonceurs.php">Annonceurs</a></li>
 					<li><a href="../test-formulaire/formulaire1.php">Recherche d'annonceurs</a></li>
-					<li><a href="../Site annonces-immo/ajout_utilisateur.php">Créer un compte</a></li>
+					<li><a href="../Site/ajout_utilisateur.php">Créer un compte</a></li>
 				</ul>
 			</div>
 		<div class="col-xs-10">

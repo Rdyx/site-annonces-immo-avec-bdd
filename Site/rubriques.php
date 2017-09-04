@@ -29,7 +29,7 @@ foreach($donnees as $value)
 		"<tr><td>".$value['0']."</td><td>".$value['1']."</td></tr>";
 	}
 
-include '../Site annonces-immo/layout.php';	?>
+include '../Site/layout.php';	?>
 </div>
 </body>	
 </html>

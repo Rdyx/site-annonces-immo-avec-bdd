@@ -31,6 +31,6 @@ foreach($donnees as $value)
 	{ $tab .= 
 		"<tr><td>".$value['0']."</td><td>".$value['1']."</td><td>".$value['2']."</td><td>".$value['3']."</td></tr>";
 	}
-include '../Site annonces-immo/layout.php';	?>
+include '../Site/layout.php';	?>
 	</body>
 	</html>

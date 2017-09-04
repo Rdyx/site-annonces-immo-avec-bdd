@@ -19,12 +19,12 @@
 		<div class="container text-center">
 			<div class="col-xs-2">
 				<ul class="list-unstyled">
-					<li><a href="index.php">Index</a></li>
-					<li><a <?php echo $rubric; ?> href="../Site annonces-immo/rubriques.php">Rubriques</a></li>
-					<li><a <?php echo $announce; ?> href="../Site annonces-immo/annonces.php">Annonces</a></li>
-					<li><a <?php echo $user; ?> href="../Site annonces-immo/annonceurs.php">Annonceurs</a></li>
-					<li><a <?php echo $searchUser; ?> href="../Site annonces-immo/annonceurs.php">Recherche d'annonceurs</a></li>
-					<li><a <?php echo $createUser; ?> href="../Site annonces-immo/ajout_utilisateur.php">Créer un compte</a></li>
+					<li><a href="../Site/index.php">Index</a></li>
+					<li><a <?php echo $rubric; ?> href="../Site/rubriques.php">Rubriques</a></li>
+					<li><a <?php echo $announce; ?> href="../Site/annonces.php">Annonces</a></li>
+					<li><a <?php echo $user; ?> href="../Site/annonceurs.php">Annonceurs</a></li>
+					<li><a <?php echo $searchUser; ?> href="../test-formulaire/formulaire1.php">Recherche d'annonceurs</a></li>
+					<li><a <?php echo $createUser; ?> href="../Site/ajout_utilisateur.php">Créer un compte</a></li>
 				</ul>
 			</div>
 			<div class="col-xs-10">

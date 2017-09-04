@@ -36,7 +36,7 @@ if(!isset($_POST['prenom'])){
 		$tab .= '</table>';
 	}
 }
-include '../Site annonces-immo/layout.php';
+include '../Site/layout.php';
 ?>
 </body>
 </html>

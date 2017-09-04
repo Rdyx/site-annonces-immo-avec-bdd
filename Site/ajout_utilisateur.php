@@ -16,7 +16,7 @@
 	$createUser = 'class="gras"';
 	$header = "annonces";
 	$headTab = "";
-	$tab = "<form action='validation_ajout.php' method='post'>
+	$tab = "<form action='validation_user.php' method='post'>
 	<ul class='list-unstyled text-center col-xs-6'>
 	<li><label for='prenom'>Prenom : </label></li>
 	<li><label for='nom'>Nom : </label></li>
@@ -38,7 +38,7 @@
 </form>
 ";
 
-include '../Site annonces-immo/layout.php';
+include '../Site/layout.php';
 
 ?>
 </body>
