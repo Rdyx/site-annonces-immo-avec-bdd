@@ -12,7 +12,7 @@
 	$announce = "";
 	$user = "";
 	$searchUser = 'class="gras"';
-	$addUser = "";
+	$createUser = "";
 	$header = "recherche d'annonceurs";
 	$tab = "";
 	$headTab = '<form action="" method="post">
