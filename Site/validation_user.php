@@ -73,7 +73,8 @@
 		$bdd->exec($sql);
 		$tab .= "Compte créé avec succés !";
 	} else {
-		$tab .= "<p>Retourner au <a href='../Site/ajout_utilisateur.php'>formulaire</a>.</p>";
+		$tab .= "<p>Retourner au <a href='../Site/ajout_utilisateur.php'>formulaire</a>.<br>
+		Il y a ".$valid." erreur(s).";
 	}
 
 
