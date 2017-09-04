@@ -23,12 +23,16 @@
 	<th>id Annonceur</th>
 	<th>Prenom</th> 
 	<th>Nom</th>
+	<th>Age</th>
+	<th>Pseudo</th>
+	<th>Password</th>
+	<th>Mail</th>
 </tr>";
 
 $tab = "";
 foreach($donnees as $value)
 	{ $tab .= 
-		"<tr><td>".$value['0']."</td><td>".$value['1']."</td><td>".$value['2']."</td></tr>";
+		"<tr><td>".$value['0']."</td><td>".$value['1']."</td><td>".$value['2']."</td><td>".$value['3']."</td><td>".$value['4']."</td><td>".$value['5']."</td><td>".$value['6']."</td></tr>";
 	}
 include '../Site/layout.php';	?>
 </body>

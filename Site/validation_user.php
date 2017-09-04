@@ -14,32 +14,73 @@
 	$user = "";
 	$searchUser = "";
 	$createUser = 'class="gras"';
-	$header = "annonces";
+	$header = "créations de compte";
 	$headTab = "";
-	$tab = "<form action='validation_ajout.php' method='post'>
-	<ul class='list-unstyled text-center col-xs-6'>
-	<li><label for='prenom'>Prenom : </label></li>
-	<li><label for='nom'>Nom : </label></li>
-	<li><label for='age'>Age : </label></li>
-	<li><label for='pseudo'>Pseudo : </label></li>
-	<li><label for='password1'>Mot de passe : </label></li>
-	<li><label for='password2'>Confirmez votre mot de passe : </label></li>
-	<li><label for='email'>Email : </label></li>
-</ul>
-<ul class='list-unstyled text-center col-xs-6'>
-	<li><input type='text' id='prenom' name='prenom' required></li>
-	<li><input type='text' id='nom' name='nom' required></li>
-	<li><input type='number' id='age' name='age' required></li>
-	<li><input type='text' id='pseudo' name='pseudo' required></li>
-	<li><input type='password' name='password1' id='password1' required></li>
-	<li><input type='password' name='password2' id='password2' required></li>
-	<li><input type='text' name='email' id='email' required></li>
-</ul><input type='submit' value='Créer votre compte'>
-</form>
-";
 
-include '../Site annonces-immo/layout.php';
+	//On set les variables pour récupérer le formulaire
+	$prenom = $_POST['prenom'];
+	$nom = $_POST['nom'];
+	$age = $_POST['age'];
+	$pseudo = $_POST['pseudo'];
+	$password1 = $_POST['password1'];
+	$password2 = $_POST['password2'];
+	$email = $_POST['email'];
+	$tab = "";
+	$bdd = new PDO('mysql:host=localhost;dbname=annonces_immo;charset=utf8', 'root', 'simplonco');
+	//On crér un compteur d'erreurs
+	$valid = 0;
 
-?>
+	//On vérifie que l'âge est cohérent et possible et on incrémente le compteur d'erreur si ce n'est pas le cas
+	if($age <= 0 OR $age >= 110){
+		$tab .= "<p>Vous avez ".$age." ans ?!</p>";
+		$valid++;
+	}
+
+	//On vérifie que le pseudo ne soit pas déjà pris
+	$checkNick = $bdd->query('SELECT uti_pseudo FROM uti_utilisateur WHERE uti_pseudo="'.$pseudo.'"');
+	$donnees = $checkNick->fetch();
+	if($donnees['uti_pseudo'] == $pseudo)
+	{
+		$tab .= '<p>Ce pseudo est déjà utilisée !</p>';
+		$valid++;
+	}
+
+	//On vérifie que le mot de passe fait bien + de 8 chars
+	if(strlen($password1) < 8){
+		$tab .= "<p>Votre mot de passe ne contient pas assez de caractères ! (8 minimum)</p>";
+		$valid++;
+	}
+
+	//On vérifie que les 2 champs de mots de passe soient identiques
+	if($password1 != $password2){
+		$tab .= "<p>Vos mots de passe ne sont pas identiques !</p>";
+		$valid++;
+	}
+
+	//On vérifie que le mail ne soit pas déjà pris
+	$checkMail = $bdd->query('SELECT uti_email FROM uti_utilisateur WHERE uti_email="'.$email.'"');
+	$donnees = $checkMail->fetch();
+	if($donnees['uti_email'] == $email)
+	{
+		$tab .= '<p>Cette adresse est déjà utilisée !</p>';
+		$valid++;
+	}
+
+	if($valid == 0){
+		$password = password_hash($password1, PASSWORD_DEFAULT);
+		$sql = "INSERT INTO uti_utilisateur (uti_prenom, uti_nom, uti_age, uti_pseudo, uti_password, uti_email)
+		VALUES ('$prenom', '$nom', '$age', '$pseudo', '$password', '$email')";
+		$bdd->exec($sql);
+		$tab .= "Compte créé avec succés !";
+	} else {
+		$tab .= "<p>Retourner au <a href='../Site/ajout_utilisateur.php'>formulaire</a>.</p>";
+	}
+
+
+
+	var_dump($valid, $prenom, $nom, $age, $pseudo, password_hash($password1, PASSWORD_DEFAULT), $email);
+	include '../Site/layout.php';
+
+	?>
 </body>
 </html>
