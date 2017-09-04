@@ -20,7 +20,7 @@
 					<li><a href="../Site/index.php">Index</a></li>
 					<li><a href="../Site/rubriques.php">Rubriques</a></li>
 					<li><a href="../Site/annonces.php">Annonces</a></li>
-					<li><a href="../Siteo/annonceurs.php">Annonceurs</a></li>
+					<li><a href="../Site/annonceurs.php">Annonceurs</a></li>
 					<li><a href="../test-formulaire/formulaire1.php">Recherche d'annonceurs</a></li>
 					<li><a href="../Site/ajout_utilisateur.php">Créer un compte</a></li>
 				</ul>

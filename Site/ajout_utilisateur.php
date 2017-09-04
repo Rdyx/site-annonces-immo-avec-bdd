@@ -14,7 +14,7 @@
 	$user = "";
 	$searchUser = "";
 	$createUser = 'class="gras"';
-	$header = "annonces";
+	$header = "créations de compte";
 	$headTab = "";
 	$tab = "<form action='validation_user.php' method='post'>
 	<ul class='list-unstyled text-center col-xs-6'>
